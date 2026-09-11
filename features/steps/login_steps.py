@@ -4,7 +4,6 @@ from tests.pages.inventory_page import InventoryPage
 
 @given("que o usuário acessa a página de login")
 def step_open_login(context):
-    breakpoint()
     context.login_page = LoginPage(context.driver)
     context.login_page.open()
 
