@@ -6,9 +6,10 @@ from guara.application import Application
 from guara import it
 from tests.transactions.login_transaction import LoginWith
 from tests.fixtures.driver import driver
+import pytest
 
 #comentar todo texto ctrl + /
-
+@pytest.mark.smoke
 def test_login(driver):
 
     # =========================
