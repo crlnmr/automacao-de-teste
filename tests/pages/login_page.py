@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage(BasePage):
+
     USERNAME = (By.ID, "user-name")
     PASSWORD = (By.ID, "password")
     LOGIN_BTN = (By.ID, "login-button")
@@ -16,6 +17,9 @@ class LoginPage(BasePage):
         self.type(*self.USERNAME, user)
         self.type(*self.PASSWORD, password)
         self.click(*self.LOGIN_BTN)
+
+    def __init__(self, driver):
+        self.driver = driver
 
     def get_error_message(self):
         return self.get_text(*self.ERROR_MESSAGE)
